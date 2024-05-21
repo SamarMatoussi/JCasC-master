@@ -19,13 +19,7 @@ RUN apt-get update -yqq
 RUN apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -yqq
 #RUN docker run -v /var/run/docker.sock:/var/run/docker.sock hello-world
 RUN echo "docker is installed successfully"
-#installing phpunit for unit tests
-RUN apt-get update
-ARG DEBIAN_FRONTEND=noninteractive
-RUN apt-get install -y php
-RUN apt-get clean
-RUN apt-get install -y php-xml php-dom php-json php-mbstring php-tokenizer php-xmlwriter
-RUN curl --location --output /usr/local/bin/phpunit "https://phar.phpunit.de/phpunit.phar"
-RUN chmod +x /usr/local/bin/phpunit
-RUN echo "php is installed successfully" 
-#
+# Installing Maven
+RUN apt-get update -yqq
+RUN apt-get install maven -yqq
+RUN mvn --version  # Verifying Maven installation
