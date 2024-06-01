@@ -50,8 +50,8 @@ credentials:
     domainCredentials:
     - credentials:
       - usernamePassword:
-          id: "gitlab-credentials"
-          username: ${GITLAB_USERNAME}
-          password: ${GITLAB_PASSWORD}
+          id: "github-credentials"
+          username: ${GITHUB_USERNAME}
+          password: ${GITHUB_PASSWORD}
           description: "Sample credentials of exampleuser"
           scope: GLOBAL
