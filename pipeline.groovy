@@ -21,7 +21,7 @@ pipelineJob('pipeline') {
         }
         stage('build'){
             steps{
-                sh 'echo "login to the gitlab container registry"'
+                sh 'echo "login to the github container registry"'
                 withCredentials([usernamePassword(credentialsId: 'github-credentials', passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
                     sh 'whoami'
                     sh 'echo "${USER}"'
